@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    /* Temporarily hardcoded colors instead of using Tailwind classes */
+    background-color: #2E2E2E;
+    color: #F5F5F5;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .prose {
+    font-size: 0.875rem; /* text-sm */
+    color: #000000; /* Changed to black for better readability */
+  }
+
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose h4,
+  .prose h5,
+  .prose h6 {
+    font-weight: 600; /* font-semibold */
+    margin-bottom: 0.5rem; /* mb-2 */
+    margin-top: 1rem; /* mt-4 */
+    color: #FFE600; /* text-ey-yellow */
+  }
+
+  .prose p {
+    margin-bottom: 0.5rem; /* mb-2 */
+    color: #000000; /* Changed to black for better readability */
+  }
+  
+  .prose p:last-child {
+    margin-bottom: 0; /* last:mb-0 */
+  }
+
+  .prose ul,
+  .prose ol {
+    margin-bottom: 0.5rem; /* mb-2 */
+    padding-left: 1rem; /* pl-4 */
+  }
+
+  .prose li {
+    margin-bottom: 0.25rem; /* mb-1 */
+  }
+
+  .prose strong {
+    font-weight: 600; /* font-semibold */
+    color: #FFE600; /* text-ey-yellow */
+  }
+
+  .prose code {
+    background-color: #1A1A1A; /* bg-ey-darkgray */
+    padding-left: 0.25rem; /* px-1 */
+    padding-right: 0.25rem; /* px-1 */
+    padding-top: 0.125rem; /* py-0.5 */
+    padding-bottom: 0.125rem; /* py-0.5 */
+    border-radius: 0.25rem; /* rounded */
+    font-size: 0.75rem; /* text-xs */
+    color: #FFE600; /* text-ey-yellow */
+  }
+
+  .prose blockquote {
+    border-left-width: 4px; /* border-l-4 */
+    border-left-color: #FFE600; /* border-ey-yellow */
+    padding-left: 1rem; /* pl-4 */
+    font-style: italic; /* italic */
+    color: #000000; /* Changed to black for better readability */
+  }
+}
+
+/* Custom scrollbar - EY Theme */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1A1A1A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FFE600;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e6cf00;
+}
+
+/* Loading animations */
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
